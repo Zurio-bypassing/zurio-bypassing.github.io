@@ -1,0 +1,303 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #1a1a1a, #4a148c);
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+nav a:hover {
+    color: #b388ff;
+    transition: color 0.3s;
+}
+
+main {
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+h1 {
+    color: #b388ff;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    color: #b388ff;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #b388ff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(179, 136, 255, 0.3);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    color: #b388ff;
+    margin-bottom: 1rem;
+}
+
+.descripcion {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #e0e0e0;
+}
+
+.feature-list {
+    text-align: left;
+    padding-left: 1.5rem;
+    color: #e0e0e0;
+}
+
+.feature-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* Estilos para la sección de tienda */
+#tienda {
+    padding: 4rem 2rem;
+}
+
+.productos-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem;
+    perspective: 1000px;
+}
+
+.producto-card {
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #b388ff;
+    border-radius: 15px;
+    padding: 2rem;
+    width: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+    transition: all 0.3s ease;
+}
+
+.producto-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #b388ff;
+    color: #1a1a1a;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    transform: translateZ(40px);
+}
+
+.producto-card h3 {
+    color: #b388ff;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    transform: translateZ(30px);
+}
+
+.precio {
+    font-size: 2.5rem;
+    color: white;
+    margin: 1rem 0;
+    font-weight: bold;
+    transform: translateZ(25px);
+}
+
+.caracteristicas {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    color: #e0e0e0;
+    transform: translateZ(20px);
+}
+
+.caracteristicas li {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.caracteristicas li::before {
+    content: '✓';
+    color: #b388ff;
+    position: absolute;
+    left: 0;
+}
+
+.comprar-btn {
+    background: #b388ff;
+    color: #1a1a1a;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transform: translateZ(30px);
+    transition: all 0.3s ease;
+}
+
+.comprar-btn:hover {
+    background: #9c27b0;
+    color: white;
+    transform: translateZ(40px) scale(1.05);
+}
+
+/* Efecto hover en las tarjetas de productos */
+.producto-card:hover {
+    transform: translateZ(10px);
+    box-shadow: 
+        0 5px 15px rgba(179, 136, 255, 0.3),
+        0 10px 30px rgba(179, 136, 255, 0.2);
+}
+
+/* Efecto de brillo en los bordes */
+.producto-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(179, 136, 255, 0.3),
+        transparent
+    );
+    z-index: -1;
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+.producto-card:hover::before {
+    opacity: 1;
+}
+
+/* Agregar estos estilos para la imagen circular */
+.logo-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #b388ff;
+    box-shadow: 0 0 20px rgba(179, 136, 255, 0.5);
+    margin: 0 auto;
+    position: relative;
+    background: #000;
+}
+
+.logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.logo-circle::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    box-shadow: inset 0 0 20px rgba(179, 136, 255, 0.3);
+    pointer-events: none;
+}
+
+.logo-circle:hover img {
+    transform: scale(1.1);
+}
+
+/* Efecto de resplandor púrpura */
+.logo-glow {
+    position: relative;
+}
+
+.logo-glow::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: radial-gradient(circle, rgba(179, 136, 255, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    animation: glowPulse 2s infinite;
+}
+
+@keyframes glowPulse {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+}
+ 

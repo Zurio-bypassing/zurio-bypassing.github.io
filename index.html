@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zurio.bypassing</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Zurio.bypassing</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#comunidad">Comunidad</a></li>
+                <li><a href="#tienda">Tienda</a></li>
+                <li><a href="#recursos">Recursos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <h2>Bienvenidos a Zurio.bypassing</h2>
+            <p class="descripcion">Tu comunidad especializada en herramientas de Screen Share (SS) para Minecraft</p>
+            
+            <div class="cards-container">
+                <div class="card">
+                    <img src="assets/ss-tools.png" alt="SS Tools Icon" class="card-icon">
+                    <h3>SS Tools</h3>
+                    <p>Herramientas especializadas para realizar Screen Share efectivas en Minecraft. Detecta y previene el uso de hacks y modificaciones no permitidas.</p>
+                </div>
+
+                <div class="card">
+                    <img src="assets/creator.png" alt="Zurio Profile" class="card-icon">
+                    <h3>Creador: Zurio</h3>
+                    <p>Desarrollador principal y fundador de Zurio.bypassing. Especialista en seguridad de Minecraft y herramientas anti-cheat.</p>
+                </div>
+
+                <div class="card">
+                    <img src="assets/features.png" alt="Features Icon" class="card-icon">
+                    <h3>Características</h3>
+                    <ul class="feature-list">
+                        <li>Detección de clientes modificados</li>
+                        <li>Análisis de procesos sospechosos</li>
+                        <li>Verificación de integridad del juego</li>
+                        <li>Protección contra bypass de SS</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="tienda">
+            <h2>Tienda SS Tools</h2>
+            <p class="descripcion">Adquiere nuestras herramientas profesionales de Screen Share</p>
+            
+            <div class="productos-container">
+                <div class="producto-card">
+                    <div class="producto-badge">Popular</div>
+                    <h3>SS Tools Basic</h3>
+                    <div class="precio">$9.99</div>
+                    <ul class="caracteristicas">
+                        <li>Detección básica de hacks</li>
+                        <li>Análisis de procesos</li>
+                        <li>Soporte por 1 mes</li>
+                    </ul>
+                    <a href="tienda.html?plan=basic&precio=9.99" class="comprar-btn" data-plan="basic" data-precio="9.99">
+                        Comprar Basic - $9.99
+                    </a>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-badge">Premium</div>
+                    <h3>SS Tools Pro</h3>
+                    <div class="precio">$24.99</div>
+                    <ul class="caracteristicas">
+                        <li>Detección avanzada de hacks</li>
+                        <li>Análisis en tiempo real</li>
+                        <li>Detección de ghost clients</li>
+                        <li>Soporte prioritario</li>
+                        <li>Actualizaciones premium</li>
+                    </ul>
+                    <a href="tienda.html?plan=pro&precio=24.99" class="comprar-btn" data-plan="pro" data-precio="24.99">
+                        Comprar Pro - $24.99
+                    </a>
+                </div>
+
+                <div class="producto-card">
+                    <div class="producto-badge">Ultimate</div>
+                    <h3>SS Tools Enterprise</h3>
+                    <div class="precio">$49.99</div>
+                    <ul class="caracteristicas">
+                        <li>Todo lo de Pro +</li>
+                        <li>API personalizada</li>
+                        <li>Panel de administración</li>
+                        <li>Soporte 24/7</li>
+                        <li>Licencia para servidor</li>
+                    </ul>
+                    <a href="tienda.html?plan=enterprise&precio=49.99" class="comprar-btn" data-plan="enterprise" data-precio="49.99">
+                        Comprar Enterprise - $49.99
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Zurio.bypassing - Todos los derechos reservados</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".card"), {
+            max: 15,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.3,
+            scale: 1.05,
+            perspective: 1000,
+        });
+    </script>
+</body>
+</html>

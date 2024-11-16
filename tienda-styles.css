@@ -1,0 +1,553 @@
+:root {
+    --primary-color: #b388ff;
+    --secondary-color: #9c27b0;
+    --background-dark: #1a1a1a;
+    --text-light: #ffffff;
+    --border-color: rgba(179, 136, 255, 0.2);
+}
+
+.checkout-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--background-dark), #2d1b4e);
+}
+
+.checkout-header {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkout-logo {
+    height: 40px;
+}
+
+.secure-badge {
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkout-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+}
+
+.order-summary, .payment-methods {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.product-details {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.product-image img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+}
+
+.product-info h3 {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.order-total {
+    margin-top: 2rem;
+}
+
+.subtotal, .tax, .total {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+}
+
+.total {
+    border-top: 1px solid var(--border-color);
+    margin-top: 1rem;
+    padding-top: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.payment-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.payment-option {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #b388ff;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.payment-option.selected {
+    background: rgba(179, 136, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.pay-button {
+    width: 100%;
+    padding: 15px;
+    background: #b388ff;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.pay-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+    .checkout-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos para el logo de PayPal */
+.payment-logo {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.paypal-logo {
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.paypal-logo svg {
+    filter: brightness(1.5);
+}
+
+.paypal-logo svg path {
+    fill: #b388ff !important;
+}
+
+.payment-option {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-option:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(179, 136, 255, 0.2);
+}
+
+.payment-option.selected {
+    border-color: var(--primary-color);
+    background: rgba(179, 136, 255, 0.1);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(179, 136, 255, 0.3);
+}
+
+.payment-option:hover .paypal-logo svg path {
+    fill: #ffffff !important;
+    transition: fill 0.3s ease;
+}
+
+.payment-option span {
+    color: var(--text-light);
+    font-weight: 500;
+    margin-top: 8px;
+}
+
+/* Efecto hover específico para PayPal */
+.payment-option:hover .paypal-logo {
+    transform: scale(1.05);
+}
+
+/* Estilos adicionales para los formularios de pago */
+.payment-forms {
+    margin-top: 2rem;
+}
+
+.payment-form {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.payment-form.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.form-row {
+    display: flex;
+    gap: 3rem;
+}
+
+.form-group.half {
+    flex: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para método seleccionado */
+.payment-option.selected {
+    border-color: var(--primary-color);
+    background: rgba(179, 136, 255, 0.1);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(179, 136, 255, 0.3);
+}
+
+/* Estilos para el botón deshabilitado */
+.pay-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Ajuste del espaciado en el formulario de tarjeta */
+.form-row {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group.half {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Estilos específicos para los campos de fecha y CVV */
+#card-expiry {
+    width: 100%;
+    max-width: 120px;
+}
+
+#card-cvv {
+    width: 100%;
+    max-width: 100px;
+}
+
+/* Mejora visual de los inputs */
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* Estilos actualizados para los iconos de pago */
+.payment-logo {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.card-logo i {
+    font-size: 4rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover para el icono de tarjeta */
+.payment-option:hover .card-logo i {
+    transform: scale(1.1);
+    color: #ffffff;
+}
+
+/* Ajuste del espaciado de las opciones de pago */
+.payment-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.payment-option {
+    padding: 2rem;
+}
+
+/* Estilos específicos para el icono de tarjeta */
+.card-logo i.fa-credit-card {
+    font-size: 3.5rem !important;
+    color: #b388ff;
+    display: block;
+    margin: 8px 0;
+}
+
+.payment-logo {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.payment-option {
+    padding: 1.8rem 1.5rem;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Efecto hover para el icono */
+.payment-option:hover .card-logo i.fa-credit-card {
+    transform: scale(1.1);
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: relative;
+    background: linear-gradient(135deg, rgba(30, 30, 30, 0.95), rgba(20, 20, 20, 0.95));
+    margin: 15% auto;
+    padding: 2rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 30px rgba(179, 136, 255, 0.3);
+    animation: modalSlideIn 0.3s ease;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.purchase-summary {
+    margin-top: 1.5rem;
+}
+
+.product-details {
+    border-bottom: 1px solid rgba(179, 136, 255, 0.2);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.product-details h3 {
+    color: #b388ff;
+    margin-bottom: 0.5rem;
+}
+
+.price-breakdown {
+    margin: 1.5rem 0;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    color: #ffffff;
+}
+
+.price-row.total {
+    border-top: 2px solid rgba(179, 136, 255, 0.2);
+    margin-top: 1rem;
+    padding-top: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #b388ff;
+}
+
+.payment-method-selected {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(179, 136, 255, 0.1);
+    border-radius: 8px;
+}
+
+.confirm-purchase {
+    width: 100%;
+    padding: 1rem;
+    background: #b388ff;
+    border: none;
+    border-radius: 8px;
+    color: #1a1a1a;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.confirm-purchase:hover {
+    background: #9c27b0;
+    color: white;
+    transform: translateY(-2px);
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Estilos para el campo de tarjeta */
+.card-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.card-input-wrapper input {
+    width: 100%;
+    padding: 12px;
+    padding-right: 35px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.card-icon {
+    position: absolute;
+    right: 15px;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    pointer-events: none;
+}
+
+/* Cuando el input está enfocado */
+.card-input-wrapper input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(179, 136, 255, 0.2);
+}
+
+.card-input-wrapper input:focus + .card-icon {
+    color: #ffffff;
+}
+
+/* Estilo específico para el icono pequeño */
+.card-icon-small {
+    position: absolute;
+    right: 12px;
+    font-size: 1rem !important;
+    color: var(--primary-color);
+    pointer-events: none;
+}
+
+.card-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.card-input-wrapper input {
+    width: 100%;
+    padding: 12px;
+    padding-right: 35px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+} 
